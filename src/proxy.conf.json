@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://web-backend-b9cxcpawaxbreqdu.canadacentral-01.azurewebsites.net",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

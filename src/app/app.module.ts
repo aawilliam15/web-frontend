@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaReclamosComponent } from './lista-reclamos/lista-reclamos.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { ResumenComponent } from './resumen/resumen.component';
 import { CrearReclamoComponent } from './crear-reclamo/crear-reclamo.component';
 
@@ -20,7 +19,10 @@ import { CrearReclamoComponent } from './crear-reclamo/crear-reclamo.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [provideClientHydration()],
+  providers: [
+    provideClientHydration(),
+    provideHttpClient(withFetch()) // Habilitar fetch
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
