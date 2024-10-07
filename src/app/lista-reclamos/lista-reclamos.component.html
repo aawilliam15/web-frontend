@@ -1,0 +1,23 @@
+<h2 class="mb-4 text-center">Lista de Reclamos</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+      <thead class="table-dark text-center">
+          <tr>
+              <th>Código</th>
+              <th>Empresa</th>
+              <th>Motivo</th>
+              <th>Estado</th>
+              <th>Fecha creación</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let reclamo of reclamos">
+            <td class="text-center">{{reclamo.id}}</td>
+            <td>{{reclamo.empresa}}</td>
+            <td>{{reclamo.motivodsc}}</td>
+            <td>{{reclamo.estado}}</td>
+            <td class="text-center">{{reclamo.fechaRegistro | date:'dd/MM/yyyy HH:mm'}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

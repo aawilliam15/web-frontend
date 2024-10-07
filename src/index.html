@@ -1,13 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>GestionReclamoFrontend</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Reclamos</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Custom Styles (opcional, si defines estilos propios) -->
+  <style>
+    .l-navbar {
+      width: 250px;
+      height: 100vh;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .nav_link.active {
+      background-color: #444;
+    }
+
+    .nav_logo,
+    .nav_link {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+    }
+
+    .nav_logo-icon,
+    .nav_icon {
+      margin-right: 10px;
+    }
+
+    .header {
+      background-color: #f8f9fa;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .container-fluid {
+      margin-top: 60px;
+      /* Para evitar que el contenido quede debajo del header */
+      margin-left: 250px;
+      width: calc(100% - 250px);
+      /* Asegura que el contenido ocupe todo el ancho restante */
+      transition: all 0.3s ease;
+    }
+
+    body {
+      overflow-x: hidden;
+      /* Evita el scroll horizontal */
+    }
+
+    /* Ocultar barra lateral */
+    .l-navbar.hidden {
+      width: 0;
+    }
+
+    /* Ajustar header cuando la barra lateral está oculta */
+    .header.hidden {
+      left: 0;
+      width: 100%;
+    }
+
+    /* Ajustar contenido cuando la barra lateral está oculta */
+    .container-fluid.hidden {
+      margin-left: 0;
+      width: 100%;
+    }
+
+
+  </style>
 </head>
+
 <body>
-  <app-root></app-root>
+
+  <!-- Main Content Area -->
+  <div class="container-fluid bg-light" id="main-content">
+    <app-root></app-root>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script para hacer el toggle de la barra lateral -->
+  <script>
+    document.getElementById('header-toggle').addEventListener('click', function () {
+      // Alternar la clase 'hidden' para la barra lateral, header y contenido principal
+      const navBar = document.getElementById('nav-bar');
+      const header = document.getElementById('header');
+      const mainContent = document.getElementById('main-content');
+
+      navBar.classList.toggle('hidden');
+      header.classList.toggle('hidden');
+      mainContent.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
+
 </html>
