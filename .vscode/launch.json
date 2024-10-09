@@ -7,7 +7,7 @@
       "type": "chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "url": "https://web-backend-b9cxcpawaxbreqdu.canadacentral-01.azurewebsites.net/"
     },
     {
       "name": "ng test",
