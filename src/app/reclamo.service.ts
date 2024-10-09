@@ -21,7 +21,7 @@ export class ReclamoService {
       user: 'admin',
       pwd: 'admintest',
     };
-
+    
     return this.httpClient.post<LoginResponse>(`${this.loginUrl}`, body, {
       observe: 'body',
       responseType: 'json',

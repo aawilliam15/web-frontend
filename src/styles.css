@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Lato'; /* Cambia por el nombre de la fuente */
+    src: url('./assets/fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: normal; /* Cambia según el peso de la fuente */
+    font-style: normal;  /* Cambia según el estilo de la fuente */
+  }
+  body {
+    font-family: 'Lato', sans-serif; /* Cambia por el nombre que hayas definido */
+  }

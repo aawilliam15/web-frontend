@@ -1,23 +1,57 @@
 <div>
   <h1>Registro de Reclamos</h1>
+  <p-toast></p-toast>
 
-  <div>
-    <h3>Datos Personales</h3>
+  <form [formGroup]="formulario" (ngSubmit)="registrar()">
     <div>
-      <p>Usuario</p>
-      <input src=""/>
-      
-    </div>
-    <div>
-        <p>Correo electronico</p>
-        <input/>
+      <h3>Datos Personales</h3>
+  
 
+      <div>
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" type="email" formControlName="correo" />
+      </div>
 
-    </div>
+      <div>
+        <label for="empresaId">Empresa</label>
+        <select id="empresaId" formControlName="empresaId">
+          <option *ngFor="let empresa of companies" [value]="empresa.id">
+            {{ empresa.descripcion }}
+          </option>
+        </select>
+      </div>
 
-    <div>
-        <button>Registrar</button>
-        <button>Cancelar</button>
+      <div>
+        <label for="motivoId">Motivo</label>
+        <select id="motivoId" formControlName="motivoId">
+          <option *ngFor="let motivo of reasons" [value]="motivo.id">
+            {{ motivo.descripcion }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label for="estado">Estado</label>
+        <select id="estado" formControlName="estado">
+          <option value="Activo">Activo</option>
+          <option value="Inactivo">Inactivo</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" formControlName="descripcion"></textarea>
+      </div>
+
+      <div>
+        <label for="adjunto">Adjunto</label>
+        <input id="adjunto" type="file" formControlName="adjunto" />
+      </div>
+
+      <div>
+        <button type="submit">Registrar</button>
+        <button type="button" (click)="cancelar()">Cancelar</button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
